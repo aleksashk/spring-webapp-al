@@ -2,6 +2,13 @@ package ru.philimonov.springcourse;
 
 public class ClassicalMusic implements Music {
 
+    private ClassicalMusic() {
+    }
+
+    public static ClassicalMusic getClassicalMusicInstance(){
+        return new ClassicalMusic();
+    }
+
     public void init(){
         System.out.println("DOING initialization");
     }
