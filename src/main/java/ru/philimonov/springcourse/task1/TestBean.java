@@ -1,4 +1,4 @@
-package ru.philimonov.springcourse;
+package ru.philimonov.springcourse.task1;
 
 public class TestBean {
     private String name;
