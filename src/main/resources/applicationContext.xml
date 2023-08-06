@@ -7,9 +7,11 @@
 
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
-    <bean factory-method="getClassicalMusicInstance" id="musicBean"
+    <bean factory-method="getClassicalMusicInstance"
+          id="musicBean"
           class="ru.philimonov.springcourse.ClassicalMusic"
-          init-method="init" destroy-method="destroy">
+          init-method="init"
+          destroy-method="destroy">
     </bean>
 
 </beans>
