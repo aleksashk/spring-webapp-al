@@ -10,11 +10,8 @@ public class MusicPlayer {
     private Music music;
 
     @Autowired
-    public MusicPlayer(@Qualifier("rockMusicBean") Music music) {
-        this.music = music;
-    }
-
-    public void setMusic(Music music) {
+    @Qualifier("classicalMusicBean")
+   public void setMusic(Music music) {
         this.music = music;
     }
 
