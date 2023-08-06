@@ -5,9 +5,12 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="testBean"
-          class="ru.philimonov.springcourse.task1.TestBean">
-        <constructor-arg value="Aleksandr"/>
+    <bean id="musicBean"
+          class="ru.philimonov.springcourse.RockMusic">
+    </bean>
+
+    <bean id="musicPlayer" class="ru.philimonov.springcourse.MusicPlayer">
+        <property name="music" ref="musicBean"/>
     </bean>
 
 </beans>

@@ -1,4 +1,4 @@
-package ru.philimonov.springcourse.task2;
+package ru.philimonov.springcourse;
 
 public interface Music {
     String getSong();

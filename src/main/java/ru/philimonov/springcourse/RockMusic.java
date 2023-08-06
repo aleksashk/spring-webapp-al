@@ -1,4 +1,4 @@
-package ru.philimonov.springcourse.task3;
+package ru.philimonov.springcourse;
 
 public class RockMusic implements Music {
     @Override

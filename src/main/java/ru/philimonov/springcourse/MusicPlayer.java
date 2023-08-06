@@ -1,14 +1,15 @@
-package ru.philimonov.springcourse.task3;
+package ru.philimonov.springcourse;
 
 public class MusicPlayer {
     private Music music;
 
-    //Ioc
-    public MusicPlayer(Music music) {
+    public MusicPlayer() {}
+
+    public void setMusic(Music music) {
         this.music = music;
     }
 
-    public void playMusic(){
+    public void playMusic() {
         System.out.println("Playing: " + music.getSong());
     }
 }
