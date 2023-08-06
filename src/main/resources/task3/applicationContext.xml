@@ -6,7 +6,7 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="musicBean"
-          class="ru.philimonov.springcourse.task3.RockMusic">
+          class="ru.philimonov.springcourse.task3.ClassicalMusic">
     </bean>
 
     <bean id="musicPlayer" class="ru.philimonov.springcourse.task3.MusicPlayer">
