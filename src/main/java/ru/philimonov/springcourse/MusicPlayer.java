@@ -1,21 +1,31 @@
 package ru.philimonov.springcourse;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class MusicPlayer {
 
-    private Music music;
+    private ClassicalMusic classicalMusic;
+    private RockMusic rockMusic;
 
     @Autowired
-    @Qualifier("classicalMusicBean")
-   public void setMusic(Music music) {
-        this.music = music;
+    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic) {
+        this.classicalMusic = classicalMusic;
+        this.rockMusic = rockMusic;
+    }
+
+    public void setClassicalMusic(ClassicalMusic classicalMusic) {
+        this.classicalMusic = classicalMusic;
+    }
+
+    public void setRockMusic(RockMusic rockMusic) {
+        this.rockMusic = rockMusic;
     }
 
     public void playMusic() {
-        System.out.println("Playing: " + music.getSong());
+        System.out.println("Playing: " + classicalMusic.getSong());
+        System.out.println("Playing: " + rockMusic.getSong());
     }
+
 }
