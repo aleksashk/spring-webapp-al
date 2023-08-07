@@ -7,7 +7,8 @@ public class SpringRunner {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
         MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-        System.out.println(musicPlayer.playMusic());
+
+        System.out.println(musicPlayer);
 
         context.close();
     }
