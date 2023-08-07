@@ -6,9 +6,10 @@ public class SpringRunner {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+        ClassicalMusic classicalMusicBean1 = context.getBean("classicalMusicBean", ClassicalMusic.class);
+        ClassicalMusic classicalMusicBean2 = context.getBean("classicalMusicBean", ClassicalMusic.class);
 
-        System.out.println(musicPlayer);
+        System.out.println("classicalMusicBean1 == classicalMusicBean2 -> " + (classicalMusicBean1 == classicalMusicBean2));
 
         context.close();
     }
