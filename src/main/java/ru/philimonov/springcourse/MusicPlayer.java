@@ -7,12 +7,17 @@ import org.springframework.stereotype.Component;
 @Component
 public class MusicPlayer {
 
+    private Music music1;
+    private Music music2;
+
     @Autowired
-    @Qualifier("classicalMusicBean")
-    private Music music;
+    public MusicPlayer(@Qualifier("rockMusicBean") Music music1, @Qualifier("classicalMusicBean") Music music2) {
+        this.music1 = music1;
+        this.music2 = music2;
+    }
 
     public String playMusic() {
-        return "Playing: " + music.getSong();
+        return "Playing: " + music1.getSong() + " " + music2.getSong();
     }
 
 }
