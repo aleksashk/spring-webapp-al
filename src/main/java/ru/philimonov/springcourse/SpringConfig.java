@@ -11,14 +11,23 @@ import org.springframework.context.annotation.PropertySource;
 public class SpringConfig {
 
     @Bean
-    public ClassicalMusic classicalMusic(){
+    public ClassicalMusic classicalMusic() {
         return new ClassicalMusic();
     }
 
     @Bean
-    public MusicPlayer musicPlayerBean(){
-        return new MusicPlayer(classicalMusic());
+    public RockMusic rockMusic() {
+        return new RockMusic();
     }
 
+    @Bean
+    public Computer computer() {
+        return new Computer(musicPlayerBean());
+    }
+
+    @Bean
+    public MusicPlayer musicPlayerBean() {
+        return new MusicPlayer(rockMusic(), classicalMusic());
+    }
 
 }

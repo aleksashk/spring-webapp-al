@@ -1,14 +1,14 @@
 package ru.philimonov.springcourse;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class SpringRunner {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
 
-        ClassicalMusic classicalMusicBean1 = context.getBean("classicalMusic", ClassicalMusic.class);
-
-        System.out.println(classicalMusicBean1.getSong());
+        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+        System.out.println(musicPlayer + ", name " + musicPlayer.getName() + ", volume " + musicPlayer.getVolume());
 
         context.close();
     }
